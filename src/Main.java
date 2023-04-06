@@ -132,5 +132,33 @@ public class Main {
             }
             System.out.println();
         }
+
+        System.out.println(" --- 7 task ---");
+
+        int[][] newArr = new int[7][7];
+
+        for (int i = 0; i < newArr.length; i++) {
+            for (int j = 0; j < newArr[i].length; j++) {
+                newArr[i][j] = (int)(Math.random()*7);
+                System.out.print(newArr[i][j] + " ");
+            }
+            System.out.println();
+        }
+
+        int maxRowIndex = 0;
+        int maxRowSum = 0;
+
+        for (int i = 0; i < newArr.length; i++) {
+            int rowSum = 0;
+            for (int j = 0; j < newArr[i].length; j++) {
+                rowSum += newArr[i][j];
+            }
+            System.out.println(rowSum);
+            if (rowSum > maxRowSum) {
+                maxRowSum = rowSum;
+                maxRowIndex = i;
+            }
+        }
+        System.out.println("Індекс рядка з максимальною сумою: " + maxRowIndex);
     }
 }
